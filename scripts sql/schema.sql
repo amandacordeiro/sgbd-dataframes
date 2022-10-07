@@ -1,0 +1,193 @@
+create database livraria_queiroz;
+use livraria_queiroz;
+- -----------------------------------------------------
+-- Schema livraria_queiroz
+-- -----------------------------------------------------
+-- -----------------------------------------------------
+-- Schema livraria_queiroz
+-- -----------------------------------------------------
+CREATE SCHEMA IF NOT EXISTS `livraria_queiroz` DEFAULT CHARACTER
+SET utf8 ;
+USE `livraria_queiroz` ;
+-- -----------------------------------------------------
+-- Table `livraria_queiroz`.`CLIENTE`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `livraria_queiroz`.`CLIENTE` (
+ `NR_CPF` CHAR(11) NOT NULL,
+ `DS_NOME` VARCHAR(150) NOT NULL,
+ `DS_SEXO` CHAR(1) NULL,
+ `DT_NASCIMENTO` DATE NOT NULL,
+ `DS_EMAIL` VARCHAR(45) NOT NULL,
+ `DS_SENHA` VARCHAR(45) NOT NULL,
+ `NR_CEP` CHAR(8) NOT NULL,
+ `DS_ENDERECO` VARCHAR(50) NOT NULL,
+ `NR_NUM` VARCHAR(10) NOT NULL,
+ `DS_BAIRRO` VARCHAR(45) NOT NULL,
+ `DS_COMPLEMENTO` VARCHAR(45) NOT NULL,
+ PRIMARY KEY (`NR_CPF`),
+ INDEX `NR_CPF` (`NR_CPF` ASC) VISIBLE)
+ENGINE = InnoDB;
+-- -----------------------------------------------------
+-- Table `livraria_queiroz`.`FUNCIONARIO`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `livraria_queiroz`.`FUNCIONARIO` (
+ `NR_FUNC` INT NOT NULL,
+ `DS_CARGO` VARCHAR(45) NULL,
+ `DS_NOME` VARCHAR(150) NULL,
+ `NR_CEP` CHAR(8) NULL,
+ `DS_ENDERECO` VARCHAR(50) NULL,
+ `NR_NUM` VARCHAR(10) NULL,
+ `DS_BAIRRO` VARCHAR(45) NULL,
+ `DS_COMPLEMENTO` VARCHAR(45) NULL,
+ PRIMARY KEY (`NR_FUNC`))
+ENGINE = InnoDB;
+-- -----------------------------------------------------
+-- Table `livraria_queiroz`.`PEDIDO_VENDA`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `livraria_queiroz`.`PEDIDO_VENDA` (
+ `NR_CPF` CHAR(11) NOT NULL,
+ `NR_PEDIDO` BIGINT NOT NULL,
+ `VLR_VENDA` DECIMAL(5,2) NULL,
+ `QTDE_VENDA` INT NULL,
+ `DT_VENDA` DATE NULL,
+ `NR_FUNC` INT NOT NULL,
+ PRIMARY KEY (`NR_PEDIDO`, `NR_FUNC`, `NR_CPF`),
+ INDEX `NR_CPF_idx` (`NR_CPF` ASC) VISIBLE,
+ INDEX `NR_FUNC_idx` (`NR_FUNC` ASC) VISIBLE,
+ CONSTRAINT `NR_CPF`
+ FOREIGN KEY (`NR_CPF`)
+ REFERENCES `livraria_queiroz`.`CLIENTE` (`NR_CPF`)
+ ON DELETE NO ACTION
+ ON UPDATE NO ACTION,
+ CONSTRAINT `NR_FUNC`
+ FOREIGN KEY (`NR_FUNC`)
+ REFERENCES `livraria_queiroz`.`FUNCIONARIO` (`NR_FUNC`)
+ ON DELETE NO ACTION
+ ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+-- -----------------------------------------------------
+-- Table `livraria_queiroz`.`PRODUTO`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `livraria_queiroz`.`PRODUTO` (
+ `NR_ISBN` INT(13) NOT NULL,
+ `DS_NOME` VARCHAR(150) NOT NULL,
+ `DS_CATEGORIA` VARCHAR(45) NULL,
+ `DS_EDITORA` VARCHAR(45) NULL,
+ `DS_AUTOR` VARCHAR(45) NULL,
+ `DS_DESCRICAO` VARCHAR(45) NULL,
+ `DS_IDIOMA` VARCHAR(45) NULL,
+ `DS_FORMA_CP` VARCHAR(45) NULL,
+ `DS_EDICAO` VARCHAR(45) NULL,
+ `NR_PAG` INT NULL,
+ `VLR_COMPRA` DECIMAL(5,2) NULL,
+ `QTDE_PRODUTO` INT NULL,
+ `NR_FUNCIONARIO` INT NOT NULL,
+ PRIMARY KEY (`NR_ISBN`, `NR_FUNCIONARIO`),
+ INDEX `NR_FUNCIONARIO_idx` (`NR_FUNCIONARIO` ASC) VISIBLE,
+ CONSTRAINT `NR_FUNCIONARIO`
+ FOREIGN KEY (`NR_FUNCIONARIO`)
+ REFERENCES `livraria_queiroz`.`FUNCIONARIO` (`NR_FUNC`)
+ ON DELETE NO ACTION
+ ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+-- -----------------------------------------------------
+-- Table `livraria_queiroz`.`FORNECEDORES`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `livraria_queiroz`.`FORNECEDORES` (
+ `NR_CNPJ` CHAR(14) NOT NULL,
+ `DS_NOME` VARCHAR(150) NOT NULL,
+ `DS_EMAIL` VARCHAR(45) NOT NULL,
+ `NR_CEP` CHAR(8) NOT NULL,
+ `DS_ENDERECO` VARCHAR(50) NOT NULL,
+ `NR_NUM` VARCHAR(10) NOT NULL,
+ `DS_BAIRRO` VARCHAR(45) NOT NULL,
+ `DS_COMPLEMENTO` VARCHAR(45) NOT NULL,
+ `NR_FUNCIONARIO` INT NOT NULL,
+ PRIMARY KEY (`NR_CNPJ`, `NR_FUNCIONARIO`),
+ INDEX `NR_FUNCIONARIO_idx` (`NR_FUNCIONARIO` ASC) VISIBLE,
+ CONSTRAINT `NR_FUNCIONARIO`
+ FOREIGN KEY (`NR_FUNCIONARIO`)
+ REFERENCES `livraria_queiroz`.`FUNCIONARIO` (`NR_FUNC`)
+ ON DELETE NO ACTION
+ ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+-- -----------------------------------------------------
+-- Table `livraria_queiroz`.`TELEFONE`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `livraria_queiroz`.`TELEFONE` (
+ `NR_CLIENTE` CHAR(11) NULL,
+ `NR_FUNC` INT NULL,
+ `NR_CNPJ` CHAR(14) NULL,
+ `NR_DDD` INT(2) NULL,
+ `NR_TELEFONE` INT(9) NULL,
+ INDEX `NR_FUNC_idx` (`NR_FUNC` ASC) VISIBLE,
+ INDEX `NR_CNPJ_idx` (`NR_CNPJ` ASC) VISIBLE,
+ CONSTRAINT `NR_CLIENTE`
+ FOREIGN KEY (`NR_CLIENTE`)
+ REFERENCES `livraria_queiroz`.`CLIENTE` (`NR_CPF`)
+ ON DELETE NO ACTION
+ ON UPDATE NO ACTION,
+ CONSTRAINT `NR_FUNC`
+ FOREIGN KEY (`NR_FUNC`)
+ REFERENCES `livraria_queiroz`.`FUNCIONARIO` (`NR_FUNC`)
+ ON DELETE NO ACTION
+ ON UPDATE NO ACTION,
+ CONSTRAINT `NR_CNPJ`
+ FOREIGN KEY (`NR_CNPJ`)
+ REFERENCES `livraria_queiroz`.`FORNECEDORES` (`NR_CNPJ`)
+ ON DELETE NO ACTION
+ ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+-- -----------------------------------------------------
+-- Table `livraria_queiroz`.`PEDIDO_VENDA_has_PRODUTO`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS
+`livraria_queiroz`.`PEDIDO_VENDA_has_PRODUTO` (
+ `PEDIDO_VENDA_NR_PEDIDO` BIGINT NOT NULL,
+ `PEDIDO_VENDA_NR_FUNC` INT NOT NULL,
+ `PEDIDO_VENDA_NR_CPF` CHAR(11) NOT NULL,
+ `PRODUTO_NR_ISBN` INT(13) NOT NULL,
+ `PRODUTO_NR_FUNCIONARIO` INT NOT NULL,
+ PRIMARY KEY (`PEDIDO_VENDA_NR_PEDIDO`,
+`PEDIDO_VENDA_NR_FUNC`, `PEDIDO_VENDA_NR_CPF`,
+`PRODUTO_NR_ISBN`, `PRODUTO_NR_FUNCIONARIO`),
+ INDEX `fk_PEDIDO_VENDA_has_PRODUTO_PRODUTO1_idx`
+(`PRODUTO_NR_ISBN` ASC, `PRODUTO_NR_FUNCIONARIO` ASC)
+VISIBLE,
+ INDEX `fk_PEDIDO_VENDA_has_PRODUTO_PEDIDO_VENDA1_idx`
+(`PEDIDO_VENDA_NR_PEDIDO` ASC, `PEDIDO_VENDA_NR_FUNC` ASC,
+`PEDIDO_VENDA_NR_CPF` ASC) VISIBLE,
+ CONSTRAINT `fk_PEDIDO_VENDA_has_PRODUTO_PEDIDO_VENDA1`
+ FOREIGN KEY (`PEDIDO_VENDA_NR_PEDIDO` ,
+`PEDIDO_VENDA_NR_FUNC` , `PEDIDO_VENDA_NR_CPF`)
+ REFERENCES `livraria_queiroz`.`PEDIDO_VENDA` (`NR_PEDIDO` ,
+`NR_FUNC` , `NR_CPF`)
+ ON DELETE NO ACTION
+ ON UPDATE NO ACTION,
+ CONSTRAINT `fk_PEDIDO_VENDA_has_PRODUTO_PRODUTO1`
+ FOREIGN KEY (`PRODUTO_NR_ISBN` , `PRODUTO_NR_FUNCIONARIO`)
+ REFERENCES `livraria_queiroz`.`PRODUTO` (`NR_ISBN` ,
+`NR_FUNCIONARIO`)
+ ON DELETE NO ACTION
+ ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+USE `livraria_queiroz`;
+DELIMITER $$
+USE `livraria_queiroz`$$
+CREATE DEFINER = CURRENT_USER TRIGGER
+`livraria_queiroz`.`CLIENTE_BEFORE_INSERT` BEFORE INSERT ON
+`CLIENTE` FOR EACH ROW
+BEGIN
+IF NEW.DS_SEXO = 'f' THEN
+SET NEW.DS_SEXO = 'F';
+ELSEIF NEW.DS_SEXO = 'm' THEN
+SET NEW.DS_SEXO = 'M';
+END IF;
+IF NEW.DS_SEXO <> 'F' AND NEW.DS_SEXO <> 'M' THEN
+SIGNAL SQLSTATE '45000'
+SET MESSAGE_TEXT = 'Sexo invalido: F ou M';
+END IF;
+END$$
