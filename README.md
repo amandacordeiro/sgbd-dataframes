@@ -6,7 +6,7 @@
 
 Hellooooo! ![](https://64.media.tumblr.com/d6cf1ccb802887989d48db3100906e27/tumblr_inline_p7j3achp5x1qgg3e5_75sq.gifv)
 
-Voltei com outro projeto bem legal. Este desenvolvi durante o meu segundo semestre da facul, junto da minha equipe maravilhosa (uma boa equipe é essencial, então procure bem os seus parceiros. mantenha o foco e saiba descontrair. conselho da amandinha). ![](https://64.media.tumblr.com/55e062b0c5976f5a55236d046911532f/tumblr_inline_p81vs67K7X1qgg3e5_75sq.gifv)
+Voltei com outro projeto bem legal. Este desenvolvi durante o meu segundo semestre da facul, junto da minha equipe maravilhosa (uma boa equipe é essencial. mantenha o foco e saiba descontrair. conselho da amandinha). ![](https://64.media.tumblr.com/55e062b0c5976f5a55236d046911532f/tumblr_inline_p81vs67K7X1qgg3e5_75sq.gifv)
 
 ------
 
