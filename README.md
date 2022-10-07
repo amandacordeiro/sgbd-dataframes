@@ -22,6 +22,7 @@ Voltei com outro projeto bem legal. Este desenvolvi durante o meu segundo semest
 
 `Pandas`, `Sqlalchemy`, `Pymysql`.
 
+#### Os códigos estão nas pastas `dataframes` e `scripts sql`
 ------
 
 ### Resumo
