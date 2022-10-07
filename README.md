@@ -1,4 +1,4 @@
-# Sistema de Banco de Dados e DataFrame
+# Sistema de Banco de Dados e DataFrames
 
  ![](https://64.media.tumblr.com/a287933b4201da86ceebe5d693158a89/tumblr_inline_p7j39fqgoz1qgg3e5_75sq.gifv) `Notas da autora: `
 
