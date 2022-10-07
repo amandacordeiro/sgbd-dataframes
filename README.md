@@ -72,13 +72,13 @@ O Banco de dados poderá ser utilizado por diferentes grupos de usuários que te
 
 ### (ER) Diagrama Entidade-Relacionamento (com Notação de Peter Chen)
 
-![ER](https://i.imgur.com/m5Ju7RD.jpeg)
+![ER](https://i.imgur.com/NADuJjj.jpeg)
 
 Diagrama ER do modelo conceitual do banco de dados da Livraria
 
 ### Projeto lógico
 
-![PL](https://i.imgur.com/NQ48NPJ.jpeg)
+![PL](https://i.imgur.com/JOOheYg.jpeg)
 
 Projeto lógico mostrando as principais estruturas e restrições lógicas baseadas no modelo de implementação relacional.
 
@@ -86,7 +86,7 @@ Projeto lógico mostrando as principais estruturas e restrições lógicas basea
 
 Este é uma extensão da **ER**.
 
-![EER](https://i.imgur.com/gaKyD9G.jpeg)
+![EER](https://i.imgur.com/SXknfty.jpeg)
 
 Na figura:
 
