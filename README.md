@@ -10,7 +10,7 @@ Voltei com outro projeto bem legal. Este desenvolvi durante o meu segundo semest
 
 ------
 
-#### Requerimentos
+### Requerimentos
 
 **Software**
 
@@ -24,7 +24,7 @@ Voltei com outro projeto bem legal. Este desenvolvi durante o meu segundo semest
 
 ------
 
-#### Resumo
+### Resumo
 
 Este projeto tem como principal objetivo apresentar o desenvolvimento de um sistema de gestão de dados. Sua finalidade se baseia no controle e na facilidade de gerenciar uma livraria virtual, resultando na otimização dos processos, em busca de torna-lós mais ágeis e eficaz, proporcionando vantagens para usuários e gestores.
 
@@ -32,7 +32,7 @@ Este projeto tem como principal objetivo apresentar o desenvolvimento de um sist
 
 ------
 
-#### Minimundo
+### Minimundo
 
 O processo de gerenciamento das operações envolve cinco entidades que são os funcionários, fornecedores, produtos, clientes e vendas. Onde todas essas entidades serão armazenadas no banco de dados.
 
@@ -44,7 +44,7 @@ E para registrar as vendas no banco de dados e contribuir para os processos inte
 
 Existem diversos relacionamentos entre as entidades. Inicialmente, o primeiro funcionário verifica a disponibilidade do estoque e a necessidade de compra junto ao fornecedor para controlar o estoque, através do banco de dados. O segundo funcionário atuará no processamento do pedido feito pelo cliente, com o seguinte fluxo: recebimento do número do ISBN, separação dos produtos, conferência/inspeção, embalagem e pronto para o envio.
 
-#### Requisitos funcionais
+### Requisitos funcionais
 
 O Banco de dados poderá ser utilizado por diferentes grupos de usuários que terão demandas com diferentes operações de manipulação de dados sobre diferentes áreas do banco de dados.
 
@@ -70,19 +70,19 @@ O Banco de dados poderá ser utilizado por diferentes grupos de usuários que te
 | Q09      | Visualizar vendas pelo valor médio, máximo e mínimo | Geral       | M          |
 | Q10      | Visualizar valor médio de vendas por cliente        | Geral       | A          |
 
-#### (ER) Diagrama Entidade-Relacionamento (com Notação de Peter Chen)
+### (ER) Diagrama Entidade-Relacionamento (com Notação de Peter Chen)
 
 ![ER](https://i.imgur.com/m5Ju7RD.jpeg)
 
 Diagrama ER do modelo conceitual do banco de dados da Livraria
 
-#### Projeto lógico
+### Projeto lógico
 
 ![PL](https://i.imgur.com/NQ48NPJ.jpeg)
 
 Projeto lógico mostrando as principais estruturas e restrições lógicas baseadas no modelo de implementação relacional.
 
-#### EER do modelo de implementação relacional
+### EER do modelo de implementação relacional
 
 Este é uma extensão da **ER**.
 
