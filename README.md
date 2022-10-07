@@ -27,7 +27,7 @@ Voltei com outro projeto bem legal. Este desenvolvi durante o meu segundo semest
 
 ### Resumo
 
-Este projeto tem como principal objetivo apresentar o desenvolvimento de um sistema de gestão de dados. Sua finalidade se baseia no controle e na facilidade de gerenciar uma livraria virtual, resultando na otimização dos processos, em busca de torna-lós mais ágeis e eficaz, proporcionando vantagens para usuários e gestores.
+Este projeto tem como principal objetivo apresentar o desenvolvimento de um sistema de gestão de dados. Sua finalidade se baseia no controle e na facilidade de gerenciar uma livraria virtual, resultando na otimização dos processos, em busca de torna-lós mais ágeis e eficazes, proporcionando vantagens para usuários e gestores.
 
 **Obs:** Dados fictícios.
 
