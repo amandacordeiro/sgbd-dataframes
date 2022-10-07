@@ -86,7 +86,7 @@ Projeto lógico mostrando as principais estruturas e restrições lógicas basea
 
 Este é uma extensão da **ER**.
 
-![](C:\Users\amand\Desktop\Screenshot_5_waifu2x_art_noise3_scale_tta_1.png)
+![EER](https://i.imgur.com/gaKyD9G.jpeg)
 
 Na figura:
 
