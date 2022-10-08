@@ -103,4 +103,4 @@ Na figura:
 
 É claro que não foi só isso. Como qualquer outro projeto universitário, foi todo documentado e robusto. 
 
-Eu optei por resumir para torna-ló mais acessível, e também não queria que tivesse aquela cara de projeto universitário, todo formal. ![](https://64.media.tumblr.com/dc6536ee860ed5696f546466e1f2bace/tumblr_inline_p81vs6OADE1qgg3e5_75sq.gifv)
+Eu optei por resumir para torná-lo mais acessível, e também não queria que tivesse aquela cara de projeto universitário, todo formal. ![](https://64.media.tumblr.com/dc6536ee860ed5696f546466e1f2bace/tumblr_inline_p81vs6OADE1qgg3e5_75sq.gifv)
